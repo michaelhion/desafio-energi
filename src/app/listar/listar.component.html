@@ -1,0 +1,30 @@
+<div class="table-responsive-sm">
+    <table class="table table-bordered table-hover">
+
+        <thead class="thead-dark">
+            <th>nome</th>
+            <th>email</th>
+            <th>telefone</th>
+            <th>cep</th>
+            <th>rua</th>
+            <th>bairro</th>
+            <th>cidade</th>
+            <th>estado</th>
+            <th>ddd</th>
+        </thead>
+        <tbody>
+                <tr>
+                <td>{{pessoa.dadosPessoais.nome}}</td>
+                <td>{{pessoa.dadosPessoais.email}}</td>
+                <td>{{pessoa.dadosPessoais.telefone}}</td>
+                <td>{{pessoa.endereco.cep}}</td>
+                <td>{{pessoa.endereco.logradouro}}</td>
+                <td>{{pessoa.endereco.bairro}}</td>
+                <td>{{pessoa.endereco.localidade}}</td>
+                <td>{{pessoa.endereco.uf}}</td>
+                <td>{{pessoa.endereco.ddd}}</td>
+                </tr>
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,48 @@
+<div class="tamanho">
+    <div class="container-sm">
+
+
+        <div class="mb-3">
+            <label for="Nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="Nome" aria-describedby="emailHelp"
+                [(ngModel)]="pessoa.dadosPessoais.nome">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" [(ngModel)]="pessoa.dadosPessoais.nome">
+        </div>
+        <div class="mb-3">
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="telefone" class="form-control" id="telefone" [(ngModel)]="pessoa.dadosPessoais.nome">
+        </div>
+        <div class="mb-3">
+            <label for="cep" class="form-label">Cep</label>
+            <input type="text" class="form-control" id="cep" aria-describedby="emailHelp" [(ngModel)]="pessoa.endereco.cep" (blur)="preencheEndereco(pessoa.endereco.cep)"/>
+        </div>
+        <div class="mb-3">
+            <label for="rua" class="form-label">Rua</label>
+            <input type="text" class="form-control" id="rua" [(ngModel)]="pessoa.endereco.logradouro"/>
+        </div>
+        <div class="mb-3">
+            <label for="bairro" class="form-label">Bairro</label>
+            <input type="bairro" class="form-control" id="bairro" [(ngModel)]="pessoa.endereco.bairro"/>
+        </div>
+        <div class="mb-3">
+            <label for="cidade" class="form-label">Cidade</label>
+            <input type="cidade" class="form-control" id="cidade" [(ngModel)]="pessoa.endereco.localidade"/>
+        </div>
+        <div class="mb-3">
+            <label for="uf" class="form-label">Estado</label>
+            <input type="uf" class="form-control" id="uf" [(ngModel)]="pessoa.endereco.uf"/>
+        </div>
+        <div class="mb-3">
+            <label for="ddd" class="form-label">DDD</label>
+            <input type="ddd" class="form-control" id="ddd" [(ngModel)]="pessoa.endereco.ddd"/>
+        </div>
+
+        <button type="submit" class="btn btn-primary" routerLink="../endereco"
+            style="margin-right: 15px;">Voltar</button>
+        <button type="submit" class="btn btn-primary" (click)="submit()">Salvar</button>
+    </div>
+
+</div>

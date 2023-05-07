@@ -1,0 +1,36 @@
+<div class="tamanho">
+  <div class="container-sm">
+
+  </div>
+  <form [formGroup]="form">
+    <div class="mb-3">
+      <label for="cep" class="form-label">Cep</label>
+      <input type="text" class="form-control" id="cep" aria-describedby="emailHelp" formControlName="cep"
+        (blur)="preencheEndereco(endereco.cep)" [(ngModel)]="endereco.cep" />
+    </div>
+    <div class="mb-3">
+      <label for="rua" class="form-label">Rua</label>
+      <input type="text" class="form-control" id="rua" formControlName="logradouro" [(ngModel)]="endereco.logradouro" />
+    </div>
+    <div class="mb-3">
+      <label for="bairro" class="form-label">Bairro</label>
+      <input type="bairro" class="form-control" id="bairro" formControlName="bairro" [(ngModel)]="endereco.bairro" />
+    </div>
+    <div class="mb-3">
+      <label for="cidade" class="form-label">Cidade</label>
+      <input type="cidade" class="form-control" id="cidade" formControlName="localidade"
+        [(ngModel)]="endereco.localidade" />
+    </div>
+    <div class="mb-3">
+      <label for="uf" class="form-label">Estado</label>
+      <input type="uf" class="form-control" id="uf" formControlName="uf" [(ngModel)]="endereco.uf" />
+    </div>
+    <div class="mb-3">
+      <label for="ddd" class="form-label">DDD</label>
+      <input type="ddd" class="form-control" id="ddd" formControlName="ddd" [(ngModel)]="endereco.ddd" />
+    </div>
+
+    <button type="submit" class="btn btn-primary" routerLink="../dadosPessoais" style="margin-right: 15px;">Voltar</button>
+    <button type="submit" class="btn btn-primary" routerLink="../confirmacao">Próximo</button>
+  </form>
+</div>
