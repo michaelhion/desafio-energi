@@ -26,6 +26,7 @@ export class ConfirmacaoComponent implements OnInit{
 
   submit(): void {
     localStorage.setItem('pessoaSalva',JSON.stringify(this.pessoa))
+    localStorage.removeItem('multi-step-form')
     this.rota.navigate(['listar'])
   }
 
