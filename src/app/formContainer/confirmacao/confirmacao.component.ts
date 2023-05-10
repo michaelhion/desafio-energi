@@ -13,6 +13,8 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
 })
 export class ConfirmacaoComponent implements OnInit{
   pessoa:Pessoa =new Input;
+  pessoas: Pessoa[]= [];
+
   constructor(
     private rota: Router,
     private cepService : CepService,
@@ -22,10 +24,18 @@ export class ConfirmacaoComponent implements OnInit{
   ngOnInit(): void {
     let json = this.localService.get('multi-step-form');
     this.pessoa = JSON.parse(json);
+    let pessoaList = JSON.parse(this.localService.get('pessoaSalva'));
+    pessoaList.forEach((element:Pessoa) => {
+      this.pessoas.push(element);
+    });
+    console.log(this.pessoas);
+    
+     
   }
 
-  submit(): void {
-    localStorage.setItem('pessoaSalva',JSON.stringify(this.pessoa))
+  submit() { 
+    this.pessoas.push(this.pessoa);
+    localStorage.setItem('pessoaSalva',JSON.stringify(this.pessoas))
     localStorage.removeItem('multi-step-form')
     this.rota.navigate(['listar'])
   }

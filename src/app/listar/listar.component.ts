@@ -8,18 +8,21 @@ import { Pessoa } from '../models/pessoa';
   templateUrl: './listar.component.html',
   styleUrls: ['./listar.component.css']
 })
-export class ListarComponent implements OnInit{
-  pessoa! : Pessoa
-  constructor(
-    private localService:LocalStorageService
-  ){}
-  
+export class ListarComponent implements OnInit {
+  pessoas: Pessoa[] = [];
+  constructor() { }
+
   ngOnInit(): void {
-    let json = this.localService.get('pessoaSalva');
-    this.pessoa = JSON.parse(json);
-    
+    let json = localStorage.getItem('pessoaSalva');
+    if (json != null) {
+      let p = JSON.parse(json) || "";
+      p.forEach((pessoa: Pessoa) => {
+        this.pessoas.push(pessoa);
+      })
+    }
+
   }
 
 
-  
+
 }

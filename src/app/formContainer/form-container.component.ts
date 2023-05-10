@@ -26,18 +26,7 @@ export class FormContainerComponent implements OnInit {
         bairro: '',
         uf: '',
         ddd: '',
-      }),
-      pessoa:this.formBuilder.group({
-        nome: '',
-        email: '',
-        telefone: '',
-        cep: '',
-        logradouro: '',
-        localidade: '',
-        bairro: '',
-        uf: '',
-        ddd: '',
-      }),
+      })
     });
   }
 
@@ -47,10 +36,6 @@ export class FormContainerComponent implements OnInit {
 
   getEnderecoForm(): FormGroup {
     return this.form.get('endereco') as FormGroup;
-  }
-
-  getAllForms():FormGroup{
-    return this.form.get('pessoa')  as FormGroup;
   }
 
 }

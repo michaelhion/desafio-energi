@@ -13,18 +13,17 @@
             <th>ddd</th>
         </thead>
         <tbody>
-                <tr>
-                <td>{{pessoa.dadosPessoais.nome}}</td>
-                <td>{{pessoa.dadosPessoais.email}}</td>
-                <td>{{pessoa.dadosPessoais.telefone}}</td>
-                <td>{{pessoa.endereco.cep}}</td>
-                <td>{{pessoa.endereco.logradouro}}</td>
-                <td>{{pessoa.endereco.bairro}}</td>
-                <td>{{pessoa.endereco.localidade}}</td>
-                <td>{{pessoa.endereco.uf}}</td>
-                <td>{{pessoa.endereco.ddd}}</td>
-                </tr>
+            <tr *ngFor="let p of pessoas">
+                <td>{{p.dadosPessoais.nome}}</td>
+                <td>{{p.dadosPessoais.email}}</td>
+                <td>{{p.dadosPessoais.telefone}}</td>
+                <td>{{p.endereco.cep}}</td>
+                <td>{{p.endereco.logradouro}}</td>
+                <td>{{p.endereco.bairro}}</td>
+                <td>{{p.endereco.localidade}}</td>
+                <td>{{p.endereco.uf}}</td>
+                <td>{{p.endereco.ddd}}</td>
+            </tr>
         </tbody>
     </table>
 </div>
-
